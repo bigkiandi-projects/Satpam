@@ -11,7 +11,7 @@ Fitur utama :
 * Support CodeIgniter 2.0 AND 3.0
 * Password hashing
 * Simple dan cocok untuk pemula sebagai bahan belajar.
-* Validasi duplicate email login
+* Validasi duplicate email input
 ## Demo
 Tersedia di folder Demo.
 ## Install
