@@ -14,6 +14,7 @@
  *     `user_email` varchar(255) NOT NULL default '',
  *     `user_pass` varchar(255) NOT NULL default '',
  *	   `user_level` varchar(255) NOT NULL default '',
+ *	   `user_name` varchar(255) NOT NULL default '',
  *     `user_date` datetime NOT NULL default '0000-00-00 00:00:00',
  *     `user_modified` datetime NOT NULL default '0000-00-00 00:00:00',
  *     `user_last_login` datetime NULL default NULL,
@@ -27,6 +28,7 @@
  *     `user_id` int(10) unsigned NOT NULL auto_increment,
  *     `user_email` varchar(255) NOT NULL default '',
  *     `user_pass` varchar(255) NOT NULL default '',
+ *	   `user_name` varchar(255) NOT NULL default '',
  *	   `user_level` varchar(255) NOT NULL default '',
  *     `user_date` datetime NOT NULL default CURRENT_TIMESTAMP,
  *     `user_modified` datetime NOT NULL default CURRENT_TIMESTAMP,
@@ -65,10 +67,11 @@ class Satpam {
 		}
 		
 		// Cek status user udah ada apa belom?
-		$this->CI->db->where('user_email', $user_email); 
+		// management yang baik setidaknya memiliki email dan username yang unik
+		$this->CI->db->where('user_email', $user_email)->or_where('user_name', $user_name); 
 		$query = $this->CI->db->get_where($this->user_table);
 		
-		if ($query->num_rows() > 0) //user_email udah ada.
+		if ($query->num_rows() > 0) //user_email atau user_name udah ada.
 			return false;
 
 		/**
