@@ -40,7 +40,6 @@
  * @author    Angga Cuacua <bigkianditeam[at]gmail.com>
  * @copyright Copyright (c) 2017-2018, bigkiandi-projects.
  * @license   http://www.gnu.org/licenses/gpl-3.0.txt
- * @link      https://github.com/DaBourz/SimpleLoginSecure
  */
 
 class Satpam {
