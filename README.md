@@ -21,8 +21,9 @@ Tersedia di folder Demo.
 ```
 CREATE TABLE `users` (
 `user_id` int(10) unsigned NOT NULL auto_increment,
+`user_name` varchar(255) NOT NULL default '',
 `user_email` varchar(255) NOT NULL default '',
-`user_pass` varchar(60) NOT NULL default '',
+`user_pass` varchar(255) NOT NULL default '',
 `user_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `user_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `user_last_login` datetime DEFAULT NULL,
